@@ -76,11 +76,52 @@
 	  <img src="http://dummyimage.com/300x400" alt="Picture of Me!" class="flexible" />
      </main>
     <footer>
-      <small>&copy; 2021 <span id="copyright"> All Rights Reserved ~
+	    <small>&copy; 2021 <span id="copyright"> </span> All Rights Reserved ~
       <a href="https://validator.w3.org/check/referer" target="_blank">Valid HTML</a> ~
       <a href="https://jigsaw.w3.org/css-validator/check?uri=referer" target="_blank">Valid CSS</a>
       </small>
     </footer>
     <!-- END Footer -->
+	<script>
+		let myDate = new Date();
+
+		let myText = "";
+		let myColor = "";
+		let myPic = "";
+
+
+		let myHour = myDate.getHours();
+
+		
+		console.log(myHour);
+
+		if(myHour >=5 && myHour <12){
+      		myText = "Hello, good morning!";
+			myColor = "yellow";
+			myPic = "images/morning.jpg";
+		}else if(myHour >=12 && myHour <18){
+      		myText = "Hi, good afternoon!";
+			myColor = "green";
+			myPic = "images/afternoon.jpg";
+		}else if(myHour >=18 && myHour <23){
+			myText = "Hi good evening!";
+			myColor = "blue";
+			myPic = "images/evening.jpg";
+		}else{
+			myText = "Good night!";
+			myColor = "purple";
+			myPic = "images/night.jpg";
+		}
+
+		//console.log(myText);
+		document.getElementById('greeting').innerHTML = myText;
+		document.getElementById('greeting').style.color = myColor;
+		document.querySelector("html").style.backgroundColor = myColor;
+		document.getElementById('pic').src = myPic;
+
+		let myYear = myDate.getFullYear();
+		document.getElementById('copyright').innerHTML = myYear;
+
+	</script>
 </body>
 </html>
